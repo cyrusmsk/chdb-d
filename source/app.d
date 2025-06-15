@@ -1,9 +1,11 @@
 module chdb.app;
 
 import std.stdio;
-import bindings;
+import chdb.session;
 
 void main() {
-    load_bindings();
-    writeln("Loaded library successfully");
+    auto session = &Session.sessionInstance();
+    session.connect(":memory:");
+    auto res = session.query("select version()", "CSV");
+    write(res.getBuf());
 }

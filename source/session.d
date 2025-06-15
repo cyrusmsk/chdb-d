@@ -2,7 +2,7 @@ module chdb.session;
 
 import chdb.result;
 
-import bindings;
+private import bindings;
 
 import std.string : toStringz, empty;
 import std.stdio : writeln;
@@ -10,12 +10,16 @@ import std.stdio : writeln;
 struct Session
 {
     private:
+        static Session _localSession;
+
         chdb_connection* _conn;
-        static bool _isConnected;
+        bool _isConnected;
         string _dataPath;
         bool _isTemp;
 
-    public:
+        @disable this();
+        @disable this(this);
+
         chdb_connection getConnection()
         {
             if (_isConnected)
@@ -24,6 +28,13 @@ struct Session
                 writeln("Connection is not established");
                 return null;
             }
+        }
+
+    public:
+        @property static ref sessionInstance()
+        {
+            load_bindings();
+            return _localSession;
         }
 
         void connect(string dataPath)
@@ -45,11 +56,12 @@ struct Session
             }
             auto argv = cast(char*)("--path="~_dataPath).toStringz;
             _conn = chdb_connect(1, &argv);
+            _isConnected = true;
         }
 
-        ~this()
+        static ~this()
         {
-            disconnect();
+            _localSession.disconnect();
         }
 
         void disconnect()
@@ -65,12 +77,12 @@ struct Session
             }
             _conn = null;
             _dataPath = "";
+            _isConnected = false;
         }
 
         void cleanUp()
         {
-            // Remove folder
-            // TODO: implement code
+            // TODO: Remove folder
             writeln("Removing folder");
         }
 

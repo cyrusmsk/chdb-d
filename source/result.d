@@ -1,6 +1,6 @@
 module chdb.result;
 
-import bindings;
+private import bindings;
 import std.datetime;
 import std.string : fromStringz;
 import std.conv : to;
@@ -26,5 +26,10 @@ struct QueryResult
             _rows = chdb_result_rows_read(rawPtr);
             _bytes = chdb_result_bytes_read(rawPtr);
             _error = chdb_result_error(rawPtr).fromStringz.to!string;
+        }
+
+        string getBuf()
+        {
+            return _buf;
         }
 }

@@ -1,7 +1,9 @@
 module chdb.app;
 
 import std.stdio;
+import bindings;
 
 void main() {
-    writeln("empty project");
+    load_bindings();
+    writeln("Loaded library successfully");
 }

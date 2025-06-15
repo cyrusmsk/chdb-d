@@ -4,6 +4,6 @@
   "dflags-ldc": ["-march=arm64", "-I/usr/local/include"],
   "authors": ["Sergei Giniatulin"],
   "copyright": "Copyright © 2025, Sergei Giniatulin",
-  "description": "chDB examples for D",
+  "description": "chDB bindigs for D",
   "license": "MIT"
 }

@@ -28,8 +28,23 @@ struct QueryResult
             _error = chdb_result_error(rawPtr).fromStringz.to!string;
         }
 
-        string getBuf()
+        @property string buf()
         {
             return _buf;
+        }
+
+        @property size_t len()
+        {
+            return _len;
+        }
+
+        @property Duration elapsed()
+        {
+            return _elapsed;
+        }
+
+        @property string error()
+        {
+            return _error;
         }
 }

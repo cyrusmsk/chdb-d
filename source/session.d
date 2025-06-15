@@ -54,6 +54,7 @@ struct Session
                 // TODO: check that the path is existing
                 _dataPath = dataPath;
             }
+
             auto argv = cast(char*)("--path="~_dataPath).toStringz;
             _conn = chdb_connect(1, &argv);
             _isConnected = true;

@@ -7,5 +7,7 @@ void main() {
     auto session = &Session.sessionInstance();
     session.connect(":memory:");
     auto res = session.query("select version()", "CSV");
-    write(res.getBuf());
+    write(res.buf);
+    writeln(res.len);
+    writeln(res.elapsed);
 }

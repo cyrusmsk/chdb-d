@@ -6,7 +6,7 @@
 	"dependencies": {
 		"chdb-d": { "path": "../../" }
 	},
-	"description": "chDB example for remote Parquet file",
+	"description": "chDB example for local CSV file",
 	"license": "MIT",
-	"name": "remote_parquet"
+	"name": "local_csv"
 }

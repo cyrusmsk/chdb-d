@@ -5,4 +5,4 @@ To automatically generate bindings just run:
 ldc2 -c bindings.c -Hf=bindings.di
 ```
 
-Currently simplified manually created bindigs file is used.
+Currently simplified manually created bindings file is used.

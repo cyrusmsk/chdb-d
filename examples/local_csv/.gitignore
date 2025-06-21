@@ -1,0 +1,17 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/local_csv
+local_csv.so
+local_csv.dylib
+local_csv.dll
+local_csv.a
+local_csv.lib
+local_csv-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst
+*.csv

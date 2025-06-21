@@ -2,7 +2,7 @@ module chdb.session;
 
 import chdb.result;
 
-private import bindings;
+private import chdb.bindings;
 
 import std.string : toStringz, empty;
 import std.stdio : writeln;

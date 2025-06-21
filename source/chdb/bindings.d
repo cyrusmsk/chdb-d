@@ -1,4 +1,4 @@
-module bindings;
+module chdb.bindings;
 
 import core.sys.posix.dlfcn;
 

@@ -1,5 +1,3 @@
-module chdb.app;
-
 import std.stdio;
 import chdb.session;
 

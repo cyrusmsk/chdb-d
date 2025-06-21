@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/remote_parquet
+remote_parquet.so
+remote_parquet.dylib
+remote_parquet.dll
+remote_parquet.a
+remote_parquet.lib
+remote_parquet-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

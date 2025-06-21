@@ -1,6 +1,6 @@
 module chdb.result;
 
-private import bindings;
+private import chdb.bindings;
 import std.datetime;
 import std.string : fromStringz;
 import std.conv : to;

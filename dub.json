@@ -1,7 +1,9 @@
 {
   "name": "chdb-d",
+  "targetType": "library",
   "lflags-posix": ["-L/usr/local/lib", "-ldl"],
   "dflags-ldc": ["-march=arm64", "-I/usr/local/include"],
+  "sourcePaths": ["source"],
   "authors": ["Sergei Giniatulin"],
   "copyright": "Copyright © 2025, Sergei Giniatulin",
   "description": "chDB bindigs for D",

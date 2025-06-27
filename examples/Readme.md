@@ -3,7 +3,7 @@
 Several examples that are showing how to work with `chdb-d` and different file formats:
 - simplest Session
 - local CSV file
-- local Parquet file (through Arrow)
+- local Parquet file (through Arrow package)
 - remote Parquet file
 
 ### Running example

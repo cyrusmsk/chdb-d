@@ -10,7 +10,7 @@ void main() {
         'https://datasets-documentation.s3.eu-west-3.amazonaws.com/amazon_reviews/amazon_reviews_2015.snappy.parquet', 
         ParquetMetadata
     )
-    SETTINGS describe_compact_output=1", InputFormat.TabSeparated);
+    SETTINGS describe_compact_output=1", OutputFormat.TabSeparated);
     write(res.buf);
     writeln(res.len);
     writeln(res.elapsed);
@@ -21,7 +21,7 @@ void main() {
     FROM s3(
         'https://datasets-documentation.s3.eu-west-3.amazonaws.com/amazon_reviews/amazon_reviews_2015.snappy.parquet', 
     ParquetMetadata
-    )",  InputFormat.Vertical);
+    )",  OutputFormat.Vertical);
     write(res.buf);
     writeln(res.len);
     writeln(res.elapsed);
@@ -35,7 +35,7 @@ void main() {
     )
     GROUP BY ALL
     ORDER BY star_rating
-    ",  InputFormat.TabSeparated);
+    ",  OutputFormat.TabSeparated);
     write(res.buf);
     writeln(res.len);
     writeln(res.elapsed);

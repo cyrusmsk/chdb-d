@@ -1,6 +1,5 @@
 import std.stdio;
 import std.conv : to;
-import std.csv : csvReader;
 
 import chdb.session;
 import chdb.format;
@@ -10,15 +9,7 @@ void main() {
     session.connect(":memory:");
 
     auto res = session.query(`
-    SELECT
-        id,
-        count() AS row_count,
-        avg(feat_0) as avg_feat_0,
-        median(feat_1) as med_feat_1,
-        quantile(0.25)(feat_2) as quant_25_feat_2
-    FROM file("sample.csv", "CSV")
-    GROUP BY id
-    ORDER BY id
+    
     `, OutputFormat.CSVWithNames);
 
     foreach (record; csvReader!(string[string])(res.buf, null))

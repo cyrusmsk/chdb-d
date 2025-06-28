@@ -1,5 +1,6 @@
 import std.stdio;
 import chdb.session;
+import chdb.format;
 
 void main() {
     auto session = &Session.sessionInstance();
@@ -9,7 +10,7 @@ void main() {
         'https://datasets-documentation.s3.eu-west-3.amazonaws.com/amazon_reviews/amazon_reviews_2015.snappy.parquet', 
         ParquetMetadata
     )
-    SETTINGS describe_compact_output=1", "TabSeparated");
+    SETTINGS describe_compact_output=1", InputFormat.TabSeparated);
     write(res.buf);
     writeln(res.len);
     writeln(res.elapsed);
@@ -20,7 +21,7 @@ void main() {
     FROM s3(
         'https://datasets-documentation.s3.eu-west-3.amazonaws.com/amazon_reviews/amazon_reviews_2015.snappy.parquet', 
     ParquetMetadata
-    )",  "Vertical");
+    )",  InputFormat.Vertical);
     write(res.buf);
     writeln(res.len);
     writeln(res.elapsed);
@@ -34,7 +35,7 @@ void main() {
     )
     GROUP BY ALL
     ORDER BY star_rating
-    ",  "TabSeparated");
+    ",  InputFormat.TabSeparated);
     write(res.buf);
     writeln(res.len);
     writeln(res.elapsed);

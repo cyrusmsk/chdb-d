@@ -2,4 +2,5 @@ module chdb;
 
 public import
     chdb.result,
-    chdb.session;
+    chdb.session,
+    chdb.format;

@@ -1,7 +1,9 @@
 import std.stdio;
 import std.conv : to;
 import std.csv : csvReader;
+
 import chdb.session;
+import chdb.format;
 
 void main() {
     auto session = &Session.sessionInstance();
@@ -17,7 +19,7 @@ void main() {
     FROM file("sample.csv", "CSV")
     GROUP BY id
     ORDER BY id
-    `, "CSVWithNames");
+    `, InputFormat.CSVWithNames);
 
     foreach (record; csvReader!(string[string])(res.buf, null))
         writefln("client #%s: found %s times and has mean value of feature_0: %1.3f",

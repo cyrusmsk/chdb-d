@@ -9,7 +9,7 @@ Ensure you have [chDB](https://github.com/chdb-io/chdb) installed on your system
 ### Using Dub
 In future the lib can be installed with:
 ```bash
-dub add chbd-d
+dub add chdb-d
 ```
 
 ## Examples

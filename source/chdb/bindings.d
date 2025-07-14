@@ -161,7 +161,7 @@ void unload_bindings()
 
 void load_bindings()
 {
-    handle = dlopen("libchdb.so", RTLD_LAZY);
+    handle = dlopen("lib/libchdb.so", RTLD_LAZY);
     if (!handle)
     {
         return;

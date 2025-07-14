@@ -1,8 +1,9 @@
 {
   "name": "chdb-d",
   "targetType": "library",
-  "lflags-posix": ["-L./lib", "-ldl"],
-  "dflags-ldc": ["-march=arm64", "-Ilib"],
+  "lflags-posix": ["-ldl"],
+  "copyFiles": ["lib"],
+  "dflags-ldc": ["-march=arm64"],
   "sourcePaths": ["source"],
   "authors": ["Sergei Giniatulin"],
   "copyright": "Copyright © 2025, Sergei Giniatulin",

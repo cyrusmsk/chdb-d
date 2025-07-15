@@ -170,10 +170,19 @@ void load_bindings()
     chdb_connect = cast(typeof(chdb_connect))dlsym(handle, "chdb_connect".ptr);
     chdb_close_conn = cast(typeof(chdb_close_conn))dlsym(handle, "chdb_close_conn".ptr);
     chdb_query = cast(typeof(chdb_query))dlsym(handle, "chdb_query".ptr);
+    chdb_query_cmdline = cast(typeof(chdb_query_cmdline))dlsym(handle, "chdb_query_cmdline".ptr);
+
+    chdb_stream_query = cast(typeof(chdb_stream_query))dlsym(handle, "chdb_stream_query".ptr);
+    chdb_stream_fetch_result = cast(typeof(chdb_stream_fetch_result))dlsym(handle, "chdb_stream_fetch_result".ptr);
+    chdb_stream_cancel_query = cast(typeof(chdb_stream_cancel_query))dlsym(handle, "chdb_stream_cancel_query".ptr);
+    chdb_destroy_query_result = cast(typeof(chdb_destroy_query_result))dlsym(handle, "chdb_destroy_query_result".ptr);
+
     chdb_result_buffer = cast(typeof(chdb_result_buffer))dlsym(handle, "chdb_result_buffer".ptr);
     chdb_result_length = cast(typeof(chdb_result_length))dlsym(handle, "chdb_result_length".ptr);
     chdb_result_elapsed = cast(typeof(chdb_result_elapsed))dlsym(handle, "chdb_result_elapsed".ptr);
     chdb_result_rows_read = cast(typeof(chdb_result_rows_read))dlsym(handle, "chdb_result_rows_read".ptr);
     chdb_result_bytes_read = cast(typeof(chdb_result_bytes_read))dlsym(handle, "chdb_result_bytes_read".ptr);
+    chdb_result_storage_rows_read = cast(typeof(chdb_result_storage_rows_read))dlsym(handle, "chdb_result_storage_rows_read".ptr);
+    chdb_result_storage_bytes_read = cast(typeof(chdb_result_storage_bytes_read))dlsym(handle, "chdb_result_storage_bytes_read".ptr);
     chdb_result_error = cast(typeof(chdb_result_error))dlsym(handle, "chdb_result_error".ptr);
 }

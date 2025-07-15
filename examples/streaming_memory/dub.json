@@ -1,0 +1,15 @@
+{
+	"authors": [
+		"Sergei Giniatulin"
+	],
+	"copyright": "Copyright © 2025, Sergei Giniatulin",
+	"dependencies": {
+		"chdb-d": {
+			"path": "../../"
+		},
+		"streams": "~>3.6.0"
+	},
+	"description": "chDB simple Session example",
+	"license": "MIT",
+	"name": "streaming"
+}

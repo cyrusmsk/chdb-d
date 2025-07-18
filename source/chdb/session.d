@@ -4,7 +4,8 @@ import chdb.result;
 
 private import chdb.bindings;
 
-import std.string : toStringz, empty;
+import std.string : toStringz, fromStringz, empty;
+import std.conv : to;
 import std.stdio : writeln;
 
 struct Session
@@ -14,12 +15,13 @@ struct Session
 
         chdb_connection* _conn;
         bool _isConnected;
-        string _dataPath;
         bool _isTemp;
+        string _dataPath;
 
         @disable this();
         @disable this(this);
 
+    public:
         chdb_connection getConnection()
         {
             if (_isConnected)
@@ -29,8 +31,6 @@ struct Session
                 return null;
             }
         }
-
-    public:
         @property static ref sessionInstance()
         {
             load_bindings();
@@ -102,5 +102,24 @@ struct Session
             }
 
             return QueryResult(tmp_res);
+        }
+
+        StreamingQueryResult streamingQuery(string queryStr, string outputFormat)
+        {
+            if (empty(outputFormat))
+                outputFormat = "CSV";
+            chdb_result* streaming_tmp_res;
+            auto connection = this.getConnection(); // should it be const/immutable?
+            try
+            {
+                streaming_tmp_res = chdb_stream_query(connection, queryStr.toStringz, outputFormat.toStringz);
+            }
+            catch (Exception e)
+            {
+                writeln("Exception instantiated while streaming query execution");
+            }
+
+            string tmpError = chdb_result_error(streaming_tmp_res).fromStringz.to!string;
+            return StreamingQueryResult(connection, streaming_tmp_res, tmpError);
         }
 }

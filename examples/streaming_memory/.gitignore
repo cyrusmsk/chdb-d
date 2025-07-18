@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/streaming
+streaming.so
+streaming.dylib
+streaming.dll
+streaming.a
+streaming.lib
+streaming-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

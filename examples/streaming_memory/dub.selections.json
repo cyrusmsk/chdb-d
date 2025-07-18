@@ -1,0 +1,7 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"chdb-d": {"path":"../../"},
+		"streams": "3.6.0"
+	}
+}

@@ -1,0 +1,10 @@
+<models>
+<model>
+<!-- Model type. Now catboost only. -->
+<type>catboost</type>
+<!-- Model name. -->
+<name>my_model</name>
+<!-- Path to trained model. -->
+<path>my_model.cbm</path>
+</model>
+</models>

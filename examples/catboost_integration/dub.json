@@ -1,0 +1,12 @@
+{
+	"authors": [
+		"Sergei Giniatulin"
+	],
+	"copyright": "Copyright © 2025, Sergei Giniatulin",
+	"dependencies": {
+		"chdb-d": { "path": "../../" }
+	},
+	"description": "chDB example for applying CatBoost model",
+	"license": "MIT",
+	"name": "catboost_integration"
+}

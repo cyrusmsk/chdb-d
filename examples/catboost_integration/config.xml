@@ -1,0 +1,4 @@
+<yandex>
+    <catboost_dynamic_library_path>cb_lib/libcatboostmodel.dylib</catboost_dynamic_library_path>
+    <models_config>cb_models/*_model.xml</models_config>
+</yandex>

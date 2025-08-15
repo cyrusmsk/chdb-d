@@ -1,4 +1,21 @@
-<yandex>
-    <catboost_dynamic_library_path>cb_lib/libcatboostmodel.dylib</catboost_dynamic_library_path>
-    <models_config>cb_models/*_model.xml</models_config>
-</yandex>
+<clickhouse>
+    <listen_host>localhost</listen_host>
+    <path>/Users/cyrus_msk/Documents/GitHub/chdb-d/examples/catboost_integration/</path>
+    <tcp_port>9000</tcp_port>
+    <http_port>8123</http_port>
+    <users_config>users.xml</users_config>
+
+    <logger>
+        <level>trace</level>
+        <console>true</console>
+        <library_bridge_log>/tmp/library-bridge.log</library_bridge_log>
+        <library_bridge_errlog>/tmp/library-bridge.err.log</library_bridge_errlog>
+        <library_bridge_level>trace</library_bridge_level>
+    </logger>
+
+    <catboost_lib_path>/Users/cyrus_msk/Documents/GitHub/chdb-d/examples/catboost_integration/cb_lib/libcatboostmodel.dylib</catboost_lib_path>
+
+    <library_bridge>
+        <port>9019</port>
+    </library_bridge>
+</clickhouse>

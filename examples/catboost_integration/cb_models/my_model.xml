@@ -3,8 +3,8 @@
 <!-- Model type. Now catboost only. -->
 <type>catboost</type>
 <!-- Model name. -->
-<name>my_model</name>
+<name>amazon</name>
 <!-- Path to trained model. -->
-<path>my_model.cbm</path>
+<path>cb_models/catboost_model.bin</path>
 </model>
 </models>

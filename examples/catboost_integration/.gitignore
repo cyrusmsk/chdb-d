@@ -14,5 +14,6 @@ catboost_integration-test-*
 *.o
 *.obj
 *.lst
+*.h
 *.csv
 *.dylib

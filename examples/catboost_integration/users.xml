@@ -1,0 +1,27 @@
+<clickhouse>
+
+    <profiles>
+        <default>
+            <allow_unrestricted_reads_from_keeper>1</allow_unrestricted_reads_from_keeper>
+        </default>
+    </profiles>
+
+    <users>
+
+        <default>
+            <password></password>
+            <networks>
+                <ip>127.0.0.1</ip>
+            </networks>
+            <profile>default</profile>
+            <quota>default</quota>
+            <access_management>1</access_management>
+        </default>
+
+    </users>
+
+    <quotas>
+        <default></default>
+    </quotas>
+
+</clickhouse>

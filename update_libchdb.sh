@@ -38,5 +38,9 @@ tar -xzf libchdb.tar.gz
 # Set execute permission for libchdb.so
 chmod +x libchdb.so
 
+# move header to the lib
+mv chdb.h ./lib
+mv libchdb.so ./lib
+
 # Clean up
 rm -f libchdb.tar.gz

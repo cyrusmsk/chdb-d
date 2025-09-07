@@ -12,7 +12,8 @@ struct QueryResult
         chdb_result * _rawPtr;
         string _buf;
         size_t _len;
-        Duration _elapsed;
+        //Duration _elapsed;
+        string _elapsed;
         ulong _rows;
         ulong _bytes;
         string _error;
@@ -34,7 +35,8 @@ struct QueryResult
         {
             _buf = chdb_result_buffer(_rawPtr).fromStringz.to!string;
             _len = chdb_result_length(_rawPtr);
-            _elapsed = chdb_result_elapsed(_rawPtr).to!long.dur!"seconds";
+            //_elapsed = chdb_result_elapsed(_rawPtr).to!long.dur!"seconds";
+            _elapsed = chdb_result_elapsed(_rawPtr).to!string;
             _rows = chdb_result_rows_read(_rawPtr);
             _bytes = chdb_result_bytes_read(_rawPtr);
             _error = chdb_result_error(_rawPtr).fromStringz.to!string;
@@ -50,7 +52,7 @@ struct QueryResult
             return _len;
         }
 
-        @property Duration elapsed()
+        @property string elapsed()
         {
             return _elapsed;
         }

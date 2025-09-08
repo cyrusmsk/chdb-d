@@ -16,3 +16,4 @@ chdb-d-test-*
 *.lst
 *.a
 *.so
+*.dylib

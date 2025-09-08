@@ -1,0 +1,10 @@
+<models>
+<model>
+<!-- Model type. Now catboost only. -->
+<type>catboost</type>
+<!-- Model name. -->
+<name>amazon</name>
+<!-- Path to trained model. -->
+<path>cb_models/catboost_model.bin</path>
+</model>
+</models>

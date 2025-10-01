@@ -1,6 +1,11 @@
 module chdb.result;
 
-private import chdb.bindings;
+version(dynamicBuild) {
+    private import chdb.dynamic_bindings;
+} else {
+    private import chdb_original;
+}
+
 import std.datetime;
 import std.string : fromStringz;
 import std.conv : to;
@@ -109,7 +114,7 @@ struct StreamingQueryResult
                 cancel();
             chdb_destroy_query_result(_rawStreamingPtr);
             _rawStreamingPtr = null;
-            // TODO: check if should _rawConn and _partialQueryResult 
+            // TODO: check if should _rawConn and _partialQueryResult
             // also be destroyed and nullified
             //_partialQueryResult.destroy();
         }

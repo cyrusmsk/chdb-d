@@ -2,7 +2,11 @@ module chdb.session;
 
 import chdb.result;
 
-private import chdb.bindings;
+version(dynamicBuild) {
+    private import chdb.dynamic_bindings;
+} else {
+    private import chdb_original;
+}
 
 import std.string : toStringz, fromStringz, empty;
 import std.conv : to;
@@ -33,7 +37,9 @@ struct Session
         }
         @property static ref sessionInstance()
         {
-            load_bindings();
+            version(dynamicBuild) {
+                load_dynamic_bindings();
+            }
             return _localSession;
         }
 

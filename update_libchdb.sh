@@ -75,20 +75,21 @@ curl -L -o libchdb.tar.gz $DOWNLOAD_URL
 # Untar the file
 tar -xzf libchdb.tar.gz
 
-mv chdb.h ./lib
+mv chdb.h ./lib_files/chdb.h
 if  [ "$STATIC" = true ]; then
     # Set execute permission for libchdb.so/libchdb.a
     chmod +x libchdb.a
-    
+
     # move header to the lib
-    mv libchdb.a ./lib
+    mv libchdb.a ./lib_files
 else
     # Set execute permission for libchdb.so/libchdb.a
     chmod +x libchdb.so
-    
+
     # move header to the lib
-    mv libchdb.so ./lib
+    mv libchdb.so ./lib_files
 fi
 
 # Clean up
 rm -f libchdb.tar.gz
+rm -f chdb.hpp

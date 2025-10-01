@@ -1,4 +1,4 @@
-module chdb.bindings;
+module chdb.dynamic_bindings;
 
 import core.sys.posix.dlfcn;
 
@@ -154,14 +154,14 @@ extern(C) {
 
 void * handle;
 
-void unload_bindings()
+void unload_dynamic_bindings()
 {
     dlclose(handle);
 }
 
-void load_bindings()
+void load_dynamic_bindings()
 {
-    handle = dlopen("lib/libchdb.so", RTLD_LAZY);
+    handle = dlopen("lib_files/libchdb.so", RTLD_LAZY);
     if (!handle)
     {
         return;

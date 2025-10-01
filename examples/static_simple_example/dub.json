@@ -1,11 +1,10 @@
 {
   "authors": ["Sergei Giniatulin"],
-  "dependencies": {
-    "chdb-d": { "path": "../../" }
-  },
-  "subConfigurations": {
-    "chdb-d": "staticBuild"
-  },
+  "targetType": "executable",
+  "lflags-posix": ["-Llib_files/", "-lchdb"],
+  "lflags-osx": ["-rpath", "@executable_path/"],
+  "lflags-linux": ["-rpath=$$ORIGIN"],
+  "dflags-ldc": ["-mcpu=native", "-Ilib_files"],
   "copyright": "Copyright © 2025, Sergei Giniatulin",
   "description": "Simple static chDB example",
   "license": "MIT",

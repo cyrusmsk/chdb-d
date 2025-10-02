@@ -5,6 +5,8 @@ Several examples that are showing how to work with `chdb-d` and different file f
 - local CSV file
 - local Parquet file
 - remote Parquet file
+- static build for local Parquet file
+- streaming example
 
 ### Running example
 

@@ -12,6 +12,21 @@ In future the lib can be installed with:
 dub add chdb-d
 ```
 
+Two options are available:
+- Dynamic build: add to dub.json
+```json
+  "subConfigurations": {
+    "chdb-d": "dynamicBuild"
+  },
+```
+
+- Static build: add to dub.json
+```json
+  "subConfigurations": {
+    "chdb-d": "staticBuild"
+  },
+```
+
 ## Examples
 To run currently available examples you need just clone the repo and build it:
 ```bash

@@ -5,10 +5,10 @@
     "chdb-d": { "path": "../../" }
   },
   "subConfigurations": {
-    "chdb-d": "dynamicBuild"
+    "chdb-d": "staticBuild"
   },
   "copyright": "Copyright © 2025, Sergei Giniatulin",
   "description": "Simple static chDB example",
   "license": "MIT",
-  "name": "static_simple_example"
+  "name": "static_local_parquet"
 }

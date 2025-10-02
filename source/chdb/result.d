@@ -1,10 +1,10 @@
 module chdb.result;
 
 version(dynamicVersion) {
-    private import chdb.dynamic_bindings;
+    private import chdb.bindings;
 }
 version(staticVersion) {
-    public import chdb_original;
+    private import chdb_original;
 }
 
 import std.datetime;

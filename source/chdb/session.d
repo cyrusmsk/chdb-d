@@ -8,13 +8,11 @@ import chdb.result;
 
 version(dynamicVersion)
 {
-    pragma(msg, "dynamic");
-    public import chdb.dynamic_bindings;
+    private import chdb.bindings;
 }
 version(staticVersion)
 {
-    pragma(msg, "static");
-    public import chdb_original;
+    private import chdb_original;
 }
 
 struct Session

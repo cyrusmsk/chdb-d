@@ -4,7 +4,7 @@
     "chdb-d": { "path": "../../" }
   },
   "subConfigurations": {
-    "chdb-d": "staticBuild"
+    "chdb-d": "dynamicBuild"
   },
   "copyright": "Copyright © 2025, Sergei Giniatulin",
   "description": "chDB example for local Parquet file",

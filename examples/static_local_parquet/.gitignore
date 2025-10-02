@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/static_local_parquet
+static_local_parquet.so
+static_local_parquet.dylib
+static_local_parquet.dll
+static_local_parquet.a
+static_local_parquet.lib
+static_local_parquet-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

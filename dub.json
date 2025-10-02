@@ -1,12 +1,26 @@
 {
   "name": "chdb-d",
-  "targetType": "library",
-  "lflags-posix": ["-ldl"],
-  "copyFiles": ["lib"],
-  "dflags-ldc": ["-march=arm64"],
-  "sourcePaths": ["source"],
   "authors": ["Sergei Giniatulin"],
   "copyright": "Copyright © 2025, Sergei Giniatulin",
   "description": "chDB bindigs for D",
-  "license": "MIT"
+  "license": "MIT",
+  "sourcePaths": ["source"],
+  "configurations": [
+    {
+      "name": "dynamicBuild",
+      "targetType": "library",
+      "copyFiles": ["lib_files"],
+      "lflags-posix": ["-ldl"],
+      "dflags-ldc": ["-mcpu=native"],
+      "versions": ["dynamicVersion"]
+    },
+    {
+      "name": "staticBuild",
+      "targetType": "staticLibrary",
+      "copyFiles": ["lib_files"],
+      "lflags-posix": ["lib_files/libchdb.a"],
+      "dflags-ldc": ["-mcpu=native"],
+      "versions": ["staticVersion"]
+    }
+  ]
 }

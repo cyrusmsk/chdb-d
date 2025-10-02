@@ -1,12 +1,19 @@
 module chdb.session;
 
-import chdb.result;
-
-private import chdb.bindings;
-
 import std.string : toStringz, fromStringz, empty;
 import std.conv : to;
 import std.stdio : writeln;
+
+import chdb.result;
+
+version(dynamicVersion)
+{
+    private import chdb.bindings;
+}
+version(staticVersion)
+{
+    private import chdb_original;
+}
 
 struct Session
 {
@@ -33,7 +40,9 @@ struct Session
         }
         @property static ref sessionInstance()
         {
-            load_bindings();
+            version(dynamicVersion) {
+                load_dynamic_bindings();
+            }
             return _localSession;
         }
 

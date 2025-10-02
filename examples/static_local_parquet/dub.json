@@ -1,13 +1,14 @@
 {
   "authors": ["Sergei Giniatulin"],
+  "targetType": "executable",
   "dependencies": {
     "chdb-d": { "path": "../../" }
   },
   "subConfigurations": {
-    "chdb-d": "dynamicBuild"
+    "chdb-d": "staticBuild"
   },
   "copyright": "Copyright © 2025, Sergei Giniatulin",
-  "description": "chDB example for local Parquet file",
+  "description": "Simple static chDB example",
   "license": "MIT",
-  "name": "local_parquet"
+  "name": "static_local_parquet"
 }
